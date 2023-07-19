@@ -21,3 +21,5 @@ export type SongType = {
   trackName: string,
   previewUrl: string,
 };
+
+export type InputTextType = React.ChangeEvent<HTMLInputElement>;
