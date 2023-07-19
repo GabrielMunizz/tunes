@@ -7,6 +7,7 @@ export type AlbumType = {
   artworkUrl100: string;
   releaseDate: string;
   trackCount: number;
+  currency:string;
 };
 
 export type UserType = {
@@ -23,3 +24,5 @@ export type SongType = {
 };
 
 export type InputTextType = React.ChangeEvent<HTMLInputElement>;
+
+export type FormSubmitType = React.FormEvent<HTMLFormElement>;

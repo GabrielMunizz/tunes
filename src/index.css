@@ -17,3 +17,15 @@ code {
   display: flex;
   justify-content: center;
 }
+
+.notFound {
+  color: #fff;
+}
+
+.searchResult {
+  color: #fff;
+}
+
+.cardLink{
+  text-decoration: none;
+}

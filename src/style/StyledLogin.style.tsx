@@ -16,6 +16,7 @@ export const StyledLogin = styled.form`
     margin-bottom: 10px;
   }
   & h1 {
+    color: #fff;
     margin-bottom: 10px;
   }
   & input {

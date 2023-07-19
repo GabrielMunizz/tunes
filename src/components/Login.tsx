@@ -8,14 +8,17 @@ import { StyledLogin } from '../style/StyledLogin.style';
 import { StyledBlueButton } from '../style/StyledButtons.style';
 
 function Login() {
+  // Cria states para guardar o username e condição de loading
   const [userName, setUserName] = useState<string>('');
   const [loading, setLoading] = useState(false);
+  // hook para redirecionamento de rotas
   const navigate = useNavigate();
-
+  // função para manipulação do input de texto.
   const handleChange = ({ target }: InputTextType) => {
     setUserName(target.value);
   };
-
+  // função que, ao clicar no botão de login, aciona o state de loading
+  // faz requisição na API com createUser e redireciona usuario para a rota '/search'.
   const handleSubmit = async () => {
     setLoading(true);
     await createUser({ name: userName });
