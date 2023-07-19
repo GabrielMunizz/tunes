@@ -17,7 +17,11 @@ function ArtistCollectionCard({ key, result }: PropsType) {
     trackCount,
     currency } = result;
   return (
-    <Link className="cardLink" to={ `/album/${collectionId}` }>
+    <Link
+      className="cardLink"
+      data-testid={ `link-to-album-${collectionId}` }
+      to={ `/album/${collectionId}` }
+    >
       <section key={ key }>
         <h2>{collectionName}</h2>
         <img src={ artworkUrl100 } alt={ artistName } />
