@@ -15,7 +15,7 @@ function ArtistCollectionCard({ result }: PropsType) {
     releaseDate,
     trackCount,
     currency } = result;
-  const formatDate = (date) => {
+  const formatDate = (date: string) => {
     return new Date(date).toLocaleString().substring(0, 10);
   };
   return (
