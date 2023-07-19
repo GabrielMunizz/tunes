@@ -82,7 +82,7 @@ function Search() {
           </StyledCardContainer>
         </>
       )}
-      {searchData.length === 0 && !loading && (
+      {searchData.length === 0 && backupSearch !== 'inicial' && !loading && (
         <h1 className="notFound">Nenhum álbum foi encontrado</h1>
       )}
 
