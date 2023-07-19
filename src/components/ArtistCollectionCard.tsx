@@ -15,6 +15,9 @@ function ArtistCollectionCard({ result }: PropsType) {
     releaseDate,
     trackCount,
     currency } = result;
+  const formatDate = (date) => {
+    return new Date(date).toLocaleString().substring(0, 10);
+  };
   return (
     <Link
       className="cardLink"
@@ -25,7 +28,7 @@ function ArtistCollectionCard({ result }: PropsType) {
         <h2>{collectionName}</h2>
         <img src={ artworkUrl100 } alt={ artistName } />
         <h3>{`Tracks: ${trackCount}`}</h3>
-        <h3>{`Released: ${releaseDate}`}</h3>
+        <h3>{`Released: ${formatDate(releaseDate)}`}</h3>
         <h4>{`Price: ${collectionPrice}`}</h4>
         <h4>{`Currency: ${currency}`}</h4>
       </section>

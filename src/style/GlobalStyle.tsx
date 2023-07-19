@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
       width: 100%;
       height: 100vh;
       background: linear-gradient(to bottom, #0c1825, #001e32, #012345, #023456);
-      background-size:cover;     
+      background-size:cover; 
+      background-attachment: fixed;   
     }
 `;

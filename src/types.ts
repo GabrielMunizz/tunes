@@ -5,7 +5,7 @@ export type AlbumType = {
   collectionName: string;
   collectionPrice: number;
   artworkUrl100: string;
-  releaseDate: string;
+  releaseDate: Date;
   trackCount: number;
   currency:string;
 };
