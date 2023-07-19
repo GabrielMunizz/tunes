@@ -18,6 +18,8 @@ export type UserType = {
 };
 
 export type SongType = {
+  artistName?: string,
+  collectionName?: string,
   trackId: number,
   trackName: string,
   previewUrl: string,
