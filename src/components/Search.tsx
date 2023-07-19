@@ -10,7 +10,7 @@ import { StyledCardContainer } from '../style/StyledCardContainer.style';
 
 function Search() {
   const [search, setSearch] = useState('');
-  const [backupSearch, setBackupSearch] = useState('');
+  const [backupSearch, setBackupSearch] = useState('inicial');
   const [loading, setLoading] = useState(false);
   const [searchData, setSearchData] = useState<AlbumType[]>([]);
 
@@ -20,14 +20,16 @@ function Search() {
 
   const handleSubmit = async (event: FormSubmitType) => {
     event.preventDefault();
+    if (searchData.length > 0) {
+      setSearchData([]);
+    }
     setLoading(true);
-    setBackupSearch(search);
     const data = await searchAlbumsAPI(search);
     setSearchData(data);
+    setBackupSearch(search);
     setSearch('');
     setLoading(false);
   };
-
   return (
     <StyledMain>
       {!loading && (
@@ -58,7 +60,7 @@ function Search() {
           <RotatingLines
             strokeColor="grey"
             strokeWidth="5"
-            animationDuration="0.75"
+            animationDuration="1.75"
             width="96"
             visible
           />
@@ -80,7 +82,7 @@ function Search() {
           </StyledCardContainer>
         </>
       )}
-      {searchData.length === 0 && (
+      {searchData.length === 0 && !loading && (
         <h1 className="notFound">Nenhum álbum foi encontrado</h1>
       )}
 

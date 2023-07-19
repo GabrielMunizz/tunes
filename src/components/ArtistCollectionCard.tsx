@@ -3,10 +3,9 @@ import { AlbumType } from '../types';
 
 type PropsType = {
   result: AlbumType;
-  key: number;
 };
 
-function ArtistCollectionCard({ key, result }: PropsType) {
+function ArtistCollectionCard({ result }: PropsType) {
   const {
     artistName,
     collectionId,
@@ -22,7 +21,7 @@ function ArtistCollectionCard({ key, result }: PropsType) {
       data-testid={ `link-to-album-${collectionId}` }
       to={ `/album/${collectionId}` }
     >
-      <section key={ key }>
+      <section>
         <h2>{collectionName}</h2>
         <img src={ artworkUrl100 } alt={ artistName } />
         <h3>{`Tracks: ${trackCount}`}</h3>
