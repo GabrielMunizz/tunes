@@ -1,4 +1,6 @@
 import { SongType } from '../types';
+import { StyledAudio } from '../style/StyledAudio.style';
+import { StyledAudioContainer } from '../style/StyledAudioContainer.style';
 
 type MusicCardProps = {
   musics: SongType
@@ -7,17 +9,17 @@ type MusicCardProps = {
 function MusicCard({ musics }: MusicCardProps) {
   const { trackName, previewUrl } = musics;
   return (
-    <div>
+    <StyledAudioContainer>
       <span>{trackName}</span>
-      <audio data-testid="audio-component" src={ previewUrl } controls>
+      <StyledAudio data-testid="audio-component" src={ previewUrl } controls>
         <track kind="captions" />
         O seu navegador não suporta o elemento
         {' '}
         {' '}
         <code>audio</code>
         .
-      </audio>
-    </div>
+      </StyledAudio>
+    </StyledAudioContainer>
   );
 }
 

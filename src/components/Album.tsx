@@ -40,8 +40,11 @@ function Album() {
             {savedMusics[0].artistName}
           </h1>
           <h2 data-testid="album-name">{savedMusics[0].collectionName}</h2>
-          {onlyMusics
-            .map((musics) => <MusicCard key={ musics.trackId } musics={ musics } />)}
+          <div>
+            {onlyMusics
+              .map((musics) => <MusicCard key={ musics.trackId } musics={ musics } />)}
+
+          </div>
         </div>
       )}
     </StyledMain>

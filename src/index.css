@@ -29,3 +29,17 @@ code {
 .cardLink{
   text-decoration: none;
 }
+
+.musicContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+  height: 800px;
+}
+
+.musicContainer h1, h2 {
+  color: #fff;
+}
