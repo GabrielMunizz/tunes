@@ -1,6 +1,15 @@
+import { StyledMain } from '../style/StyledMain.style';
+import { StyledBlueButton } from '../style/StyledButtons.style';
+
 function Search() {
   return (
-    <p>Search</p>
+    <StyledMain>
+      <form action="">
+        <input type="text" />
+        <StyledBlueButton />
+      </form>
+
+    </StyledMain>
   );
 }
 
