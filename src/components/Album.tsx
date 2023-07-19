@@ -11,6 +11,7 @@ function Album() {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const onlyMusics = savedMusics.slice(1);
+
   useEffect(() => {
     const getData = async () => {
       const data = await getMusics(id as string);
