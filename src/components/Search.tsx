@@ -28,7 +28,6 @@ function Search() {
     setLoading(false);
   };
 
-  console.log(searchData);
   return (
     <StyledMain>
       {!loading && (
