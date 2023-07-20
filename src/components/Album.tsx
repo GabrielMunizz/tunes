@@ -43,7 +43,7 @@ function Album() {
           <h2 data-testid="album-name">{savedMusics[0].collectionName}</h2>
           <div>
             {onlyMusics
-              .map((musics) => <MusicCard key={ musics.trackId } musics={ musics } />)}
+              .map((music) => <MusicCard key={ music.trackId } music={ music } />)}
 
           </div>
         </div>

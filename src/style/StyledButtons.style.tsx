@@ -9,4 +9,8 @@ export const StyledBlueButton = styled.button`
   color: #fff;
   padding: 5px; 
   transition: ease 0.5s;
+
+  &:disabled {
+    color: #888787;
+  }
 `;
