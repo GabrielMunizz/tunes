@@ -27,7 +27,13 @@ code {
 }
 
 .cardLink{
-  text-decoration: none;
+  text-decoration: none;  
+}
+
+.loadingHeader {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .musicContainer{
@@ -43,3 +49,16 @@ code {
 .musicContainer h1, h2 {
   color: #fff;
 }
+
+a {
+  text-decoration: none;
+  transition: ease 0.5s;
+  color: #fff;
+}
+
+a:hover {
+  cursor: pointer;
+  transform: scale(1.1);;
+  color:rgb(116, 7, 194);  
+}
+

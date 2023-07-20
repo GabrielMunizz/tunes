@@ -11,6 +11,7 @@ export const StyledBlueButton = styled.button`
   transition: ease 0.5s;
 
   &:disabled {
+    background-color: #f80606;
     color: #888787;
   }
 `;

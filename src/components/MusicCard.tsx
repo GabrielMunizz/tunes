@@ -21,7 +21,7 @@ function MusicCard({ music }: MusicCardProps) {
     const getSong = async () => {
       const data = isChecked ? await addSong(song as SongType)
         : await removeSong(song as SongType);
-      console.log(data);
+      return data;
     };
     getSong();
   }, [song]);

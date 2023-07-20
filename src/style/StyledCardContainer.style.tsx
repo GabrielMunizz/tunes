@@ -19,8 +19,10 @@ export const StyledCardContainer = styled.main`
     width: 300px;
     height: 300px;
     border: 1px solid #fff;    
-    color: #fff;
+    color: #fff;    
+  }
 
-    
+  & section:hover{
+    background-color: rgb(118, 29, 128);
   }
 `;

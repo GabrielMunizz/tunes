@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { RotatingLines } from 'react-loader-spinner';
 import { getUser } from '../services/userAPI';
 import { UserType } from '../types';
+import { StyledHeader } from '../style/StyledHeader.style';
 
 function Header() {
   const [user, setUser] = useState<UserType>();
@@ -18,7 +19,7 @@ function Header() {
   return (
     <>
       {loading && (
-        <div>
+        <div className="loadingHeader">
           <h1>Carregando...</h1>
           <RotatingLines
             strokeColor="grey"
@@ -33,17 +34,43 @@ function Header() {
 
       {!loading && (user?.name.length !== 0) && (
 
-        <header data-testid="header-component">
-          <h1>TrybeTunes</h1>
-          <p data-testid="header-user-name">
-            Welcome:
-            {' '}
-            {user?.name}
-          </p>
-          <NavLink data-testid="link-to-search" to="/search">Search</NavLink>
-          <NavLink data-testid="link-to-favorites" to="/favorites">Favoritos</NavLink>
-          <NavLink data-testid="link-to-profile" to="/profile">Meu perfil</NavLink>
-        </header>
+        <StyledHeader data-testid="header-component">
+          <div className="titleContainer">
+            <h1>TrybeTunes</h1>
+          </div>
+          <div className="userNameContainer">
+            <h3 data-testid="header-user-name">
+              Welcome:
+              {' '}
+              {user?.name}
+            </h3>
+
+            <NavLink
+              className="searchLink"
+              data-testid="link-to-search"
+              to="/search"
+            >
+              Search
+
+            </NavLink>
+            <NavLink
+              className="favLink"
+              data-testid="link-to-favorites"
+              to="/favorites"
+            >
+              Favorites
+
+            </NavLink>
+            <NavLink
+              className="profileLink"
+              data-testid="link-to-profile"
+              to="/profile"
+            >
+              My profile
+
+            </NavLink>
+          </div>
+        </StyledHeader>
       )}
 
     </>
