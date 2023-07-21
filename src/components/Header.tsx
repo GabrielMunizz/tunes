@@ -36,7 +36,7 @@ function Header() {
 
         <StyledHeader data-testid="header-component">
           <div className="titleContainer">
-            <h1>TrybeTunes</h1>
+            <p>TrybeTunes</p>
           </div>
           <div className="userNameContainer">
             <h3 data-testid="header-user-name">

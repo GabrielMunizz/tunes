@@ -18,11 +18,15 @@ export const StyledCardContainer = styled.main`
     margin: 10px;
     width: 300px;
     height: 300px;
-    border: 1px solid #fff;    
+    box-shadow: 2px 1px 10px 0 rgba(255, 251, 251, 0.2);    
     color: #fff;    
   }
 
+  & section img {
+    border: 1px solid #fff;
+  }
+
   & section:hover{
-    background-color: rgb(118, 29, 128);
+    background-color: rgb(73, 52, 191);
   }
 `;

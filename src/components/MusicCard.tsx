@@ -24,7 +24,7 @@ function MusicCard({ music }: MusicCardProps) {
       return data;
     };
     getSong();
-  }, [song]);
+  }, [song, isChecked]);
 
   return (
     <StyledAudioContainer>
