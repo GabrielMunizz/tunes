@@ -6,19 +6,21 @@ import { addSong, removeSong, getFavoriteSongs } from '../services/favoriteSongs
 
 type MusicCardProps = {
   music: SongType
+  removeFav?: () => void;
 };
 
-function MusicCard({ music }: MusicCardProps) {
+function MusicCard({ music, removeFav = undefined }: MusicCardProps) {
   const { trackId, trackName, previewUrl } = music;
   const [isChecked, setIsChecked] = useState(false);
 
   const handleChecked = async (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsChecked(event.target.checked);
     if (!isChecked) {
-      await addSong(music);
+      addSong(music);
     } else {
-      await removeSong(music);
+      removeSong(music);
     }
+    if (removeFav) { removeFav(); }
   };
 
   useEffect(() => {

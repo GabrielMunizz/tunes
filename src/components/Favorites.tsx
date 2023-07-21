@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import { SongType } from '../types';
 import MusicCard from './MusicCard';
 
@@ -14,12 +14,9 @@ function Favorites() {
     getFav();
   }, []);
 
-  useEffect(() => {
-  }, []);
-
-  const getFavFromLocalStorage = JSON
-    .parse(localStorage.getItem('favorite_songs') as string);
-  console.log(getFavFromLocalStorage);
+  const removeFav = (trackId: number) => {
+    setFavSongs(favSongs.filter((song) => song.trackId !== trackId));
+  };
 
   return (
     <>
@@ -27,7 +24,11 @@ function Favorites() {
       <br />
       <div>
         {favSongs && favSongs
-          .map((music: SongType) => <MusicCard key={ music.trackId } music={ music } />)}
+          .map((music: SongType) => (<MusicCard
+            key={ music.trackId }
+            music={ music }
+            removeFav={ () => removeFav(music.trackId) }
+          />))}
       </div>
     </>
   );
