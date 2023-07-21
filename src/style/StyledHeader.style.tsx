@@ -49,5 +49,6 @@ export const StyledHeader = styled.header`
     width: 25%;
     font-size: 25px;
     color: #fff;
+    font-family: 'Architects Daughter', cursive;
   }
 `;

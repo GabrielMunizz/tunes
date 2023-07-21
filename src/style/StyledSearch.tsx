@@ -13,6 +13,7 @@ export const StyledSearch = styled.form`
   & h2 {
     color: #fff;
     font-size: 40px;
+    font-family: 'Architects Daughter', cursive;
   }
 
   & input {
