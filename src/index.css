@@ -24,6 +24,7 @@ code {
 
 .searchResult {
   color: #fff;
+  margin-bottom: 50px;
 }
 
 .cardLink{
@@ -42,12 +43,12 @@ code {
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  margin: 20px;
-  height: 800px;
+  margin: 20px; 
 }
 
 .musicContainer h1, h2 {
   color: #fff;
+  margin-bottom: 30px;
 }
 
 a {

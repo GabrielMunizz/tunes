@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import { SongType } from '../types';
 import MusicCard from './MusicCard';
+import { StyledAudioContainer } from '../style/StyledAudioContainer.style';
+import { StyledMain } from '../style/StyledMain.style';
 
 function Favorites() {
   const [favSongs, setFavSongs] = useState<SongType[]>([]);
@@ -19,18 +21,18 @@ function Favorites() {
   };
 
   return (
-    <>
+    <StyledMain>
       <h2>Favorites: </h2>
       <br />
-      <div>
+      <StyledAudioContainer>
         {favSongs && favSongs
           .map((music: SongType) => (<MusicCard
             key={ music.trackId }
             music={ music }
             removeFav={ () => removeFav(music.trackId) }
           />))}
-      </div>
-    </>
+      </StyledAudioContainer>
+    </StyledMain>
   );
 }
 
