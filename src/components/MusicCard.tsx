@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { SongType } from '../types';
 import { StyledAudio } from '../style/StyledAudio.style';
 import { StyledAudioContainer } from '../style/StyledAudioContainer.style';
-import { addSong, removeSong } from '../services/favoriteSongsAPI';
+import { addSong, removeSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 type MusicCardProps = {
   music: SongType
@@ -11,20 +11,24 @@ type MusicCardProps = {
 function MusicCard({ music }: MusicCardProps) {
   const { trackId, trackName, previewUrl } = music;
   const [isChecked, setIsChecked] = useState(false);
-  const [song, setSong] = useState<SongType>();
 
-  const handleChecked = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChecked = async (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsChecked(event.target.checked);
-    setSong(music);
+    if (!isChecked) {
+      await addSong(music);
+    } else {
+      await removeSong(music);
+    }
   };
+
   useEffect(() => {
-    const getSong = async () => {
-      const data = isChecked ? await addSong(song as SongType)
-        : await removeSong(song as SongType);
-      return data;
+    const getCheckedSongs = async () => {
+      const data = await getFavoriteSongs();
+      const isFavSong = data.some((song) => song.trackId === trackId);
+      setIsChecked(isFavSong);
     };
-    getSong();
-  }, [song, isChecked]);
+    getCheckedSongs();
+  }, []);
 
   return (
     <StyledAudioContainer>
