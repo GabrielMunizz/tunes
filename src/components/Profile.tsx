@@ -35,7 +35,6 @@ function Profile() {
       )}
       {!loading && (
         <UserProfile loggedUser={ loggedUser as UserType } />
-
       )}
     </StyledMain>
   );

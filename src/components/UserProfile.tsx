@@ -15,7 +15,7 @@ function UserProfile({ loggedUser }: UserProfileType) {
           data-testid="profile-image"
           className="profileImage"
           src={ image }
-          alt={ name }
+          alt="imagem do usuario"
         />
         <Link className="editProfileBtn" to="/profile/edit">Editar perfil</Link>
       </div>
