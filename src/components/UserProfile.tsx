@@ -22,6 +22,7 @@ function UserProfile({ loggedUser }: UserProfileType) {
       <div className="userInfo">
         <h3>Nome:</h3>
         <p className="profileName">{name}</p>
+        <p className="profileName2">{name}</p>
         <h3>E-mail:</h3>
         <p className="profileEmail">{email}</p>
         <h3>Descrição:</h3>
