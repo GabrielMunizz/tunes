@@ -5,15 +5,8 @@ import { UserType, InputTextType } from '../types';
 
 function ProfileEdit() {
   const [loadProfile, setLoadProfile] = useState<UserType>();
-  const [userImage, setUserImage] = useState('');
+  const [disableBtn, setDisableBtn] = useState(true);
   const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   const uploadProfile = async () => {
-  //     const upData = await updateUser(editProfile as UserType);
-  //   };
-  //   uploadProfile();
-  // }, []);
 
   useEffect(() => {
     const userResult = async () => {
@@ -31,19 +24,19 @@ function ProfileEdit() {
       ...loadProfile as UserType,
       [name]: value,
     });
+    allInputFields();
   }
 
-  // const handleImage = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const selectedImage = event.target.files[0];
-  //   const reader = new FileReader();
-
-  //   reader.onloadend = () => {
-  //     setUserImage(reader.result as string);
-  //   };
-  //   if (selectedImage) {
-  //     reader.readAsDataURL(selectedImage);
-  //   }
-  // };
+  function allInputFields() {
+    if (loadProfile) {
+      const isProfileValid = loadProfile.description.length > 0
+                              && loadProfile.email.length > 0
+                              && loadProfile.image.length > 0
+                              && loadProfile.name.length > 0;
+      setDisableBtn(!isProfileValid);
+      return disableBtn;
+    }
+  }
   return (
     <>
       {loading && (
@@ -83,7 +76,13 @@ function ProfileEdit() {
           </div>
           <div className="editImageContainer">
             <h3>URL da imagem: </h3>
-            <input type="text" />
+            <input
+              type="text"
+              name="image"
+              data-testid="edit-input-image"
+              value={ loadProfile?.image }
+              onChange={ (event) => handleChange(event) }
+            />
           </div>
           <div className="editBioContainer">
             <h3>Descrição: </h3>
@@ -97,7 +96,13 @@ function ProfileEdit() {
             />
           </div>
 
-          <button data-testid="edit-button-save" disabled>Salvar</button>
+          <button
+            data-testid="edit-button-save"
+            disabled={ disableBtn }
+          >
+            Salvar
+
+          </button>
 
         </form>
       )}
