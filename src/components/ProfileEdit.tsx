@@ -60,8 +60,9 @@ function ProfileEdit() {
         </div>
       )}
       {!loading && (
-        <form>
-          <div>
+        <form className="form">
+          <div className="editNameContainer">
+            <h3>Nome: </h3>
             <input
               data-testid="edit-input-name"
               name="name"
@@ -70,7 +71,8 @@ function ProfileEdit() {
               onChange={ (event) => handleChange(event) }
             />
           </div>
-          <div>
+          <div className="editEmailContainer">
+            <h3>E-mail: </h3>
             <input
               data-testid="edit-input-email"
               name="email"
@@ -79,7 +81,8 @@ function ProfileEdit() {
               onChange={ (event) => handleChange(event) }
             />
           </div>
-          <div>
+          <div className="editBioContainer">
+            <h3>Descrição: </h3>
             <textarea
               name="description"
               data-testid="edit-input-description"
