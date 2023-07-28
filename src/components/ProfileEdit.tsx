@@ -81,6 +81,10 @@ function ProfileEdit() {
               onChange={ (event) => handleChange(event) }
             />
           </div>
+          <div className="editImageContainer">
+            <h3>URL da imagem: </h3>
+            <input type="text" />
+          </div>
           <div className="editBioContainer">
             <h3>Descrição: </h3>
             <textarea
@@ -91,15 +95,6 @@ function ProfileEdit() {
               rows={ 10 }
               onChange={ (event) => handleChange(event) }
             />
-          </div>
-          <div>
-            {/* <input
-              data-testid="edit-input-image"
-              type="file"
-              name="image"
-              accept="image/*"
-              onChange={ handleImage }
-            /> */}
           </div>
 
           <button data-testid="edit-button-save" disabled>Salvar</button>

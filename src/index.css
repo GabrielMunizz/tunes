@@ -89,19 +89,19 @@ a:hover {
 }
 
 .userInfo {
+  color: #fff;
   display: flex;
   flex-direction: column;  
-  justify-content: space-around;
-  width: 400px;
-  height: 200px;
   font-size: 22px;
-  color: #fff;
+  justify-content: space-around;
+  height: 200px;
+  width: 400px;
 }
 
 .nameContainer, .emailContainer {
+  align-items: center; 
   display: flex;
   flex-direction: row;  
-  align-items: center; 
 }
 
 .profileName, .profileEmail, .profileBio {
@@ -109,57 +109,51 @@ a:hover {
 }
 
 .bioContainer {
-  color: #fff;
-  margin: 10px;
-  height: 200px;
-  width: 600px;
   border: 1px solid #fff;
+  color: #fff;
+  height: 200px;
+  margin: 10px;
   padding: 10px;
+  width: 600px;
 }
 
 .editProfileBtn {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 60px;
-  margin: 10px;
   border: 1px solid white;
   border-radius: 5px;
   background-color: blueviolet;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  margin: 10px;
+  width: 100px;
 }
 
 .form {
+  align-items: center;
+  color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;  
-  color: #fff;
   font-size: 18px;
+  height: 80vh;  
+  justify-content: center;
 }
 
 .form button {
+  font-size: 15px;
   width: 100px;
   height: 40px;
-  font-size: 15px;
 }
 
-.editNameContainer, .editEmailContainer {
-  display: flex;
+.editBioContainer, .editImageContainer, .editNameContainer, .editEmailContainer {
   align-items: center;
-  flex-direction: row;
-}
-
-.editBioContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-.editNameContainer input, .editEmailContainer input, .editBioContainer textarea {
+.editNameContainer input, .editEmailContainer input, .editBioContainer textarea, .editImageContainer input {
+  border-radius: 5px;
   font-size: 18px;
   margin: 10px;
-  border-radius: 5px;
   padding: 5px;
 }
