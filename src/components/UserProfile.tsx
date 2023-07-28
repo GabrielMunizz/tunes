@@ -7,7 +7,6 @@ type UserProfileType = {
 
 function UserProfile({ loggedUser }: UserProfileType) {
   const { description, email, image, name } = loggedUser;
-  console.log(name.length);
   return (
     <section>
       <div className="image&BtnContainer">
@@ -22,7 +21,6 @@ function UserProfile({ loggedUser }: UserProfileType) {
       <div className="userInfo">
         <h3>Nome:</h3>
         <p className="profileName">{name}</p>
-        <p className="profileName2">{name}</p>
         <h3>E-mail:</h3>
         <p className="profileEmail">{email}</p>
         <h3>Descrição:</h3>

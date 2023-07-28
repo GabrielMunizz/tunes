@@ -39,9 +39,8 @@ function Header() {
             <p>TrybeTunes</p>
           </div>
           <div className="userNameContainer">
+            <h3>Welcome: </h3>
             <h3 data-testid="header-user-name">
-              Welcome:
-              {' '}
               {user?.name}
             </h3>
 

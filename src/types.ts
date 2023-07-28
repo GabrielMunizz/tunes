@@ -25,6 +25,6 @@ export type SongType = {
   previewUrl: string,
 };
 
-export type InputTextType = React.ChangeEvent<HTMLInputElement>;
+export type InputTextType = React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>;
 
 export type FormSubmitType = React.FormEvent<HTMLFormElement>;

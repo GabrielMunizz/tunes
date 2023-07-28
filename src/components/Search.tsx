@@ -9,6 +9,7 @@ import ArtistCollectionCard from './ArtistCollectionCard';
 import { StyledCardContainer } from '../style/StyledCardContainer.style';
 
 function Search() {
+  // Cria states para a busca, carregamento da pagina
   const [search, setSearch] = useState('');
   const [backupSearch, setBackupSearch] = useState('inicial');
   const [loading, setLoading] = useState(false);

@@ -1,48 +1,109 @@
-import { useEffect, useState } from 'react';
-import { getUser } from '../services/userAPI';
-import { UserType } from '../types';
+import { useState, useEffect } from 'react';
+import { RotatingLines } from 'react-loader-spinner';
+import { getUser, updateUser } from '../services/userAPI';
+import { UserType, InputTextType } from '../types';
 
 function ProfileEdit() {
-  const [loggedUser, setLoggedUser] = useState<UserType>();
+  const [loadProfile, setLoadProfile] = useState<UserType>();
+  const [userImage, setUserImage] = useState('');
+  const [loading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   const uploadProfile = async () => {
+  //     const upData = await updateUser(editProfile as UserType);
+  //   };
+  //   uploadProfile();
+  // }, []);
 
   useEffect(() => {
     const userResult = async () => {
       const userData = await getUser();
-      setLoggedUser(userData);
+      setLoadProfile(userData);
+      setLoading(false);
+      console.log(userData);
     };
     userResult();
   }, []);
+
+  function handleChange({ target }: InputTextType) {
+    const { name, value } = target;
+    setLoadProfile({
+      ...loadProfile as UserType,
+      [name]: value,
+    });
+  }
+
+  // const handleImage = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   const selectedImage = event.target.files[0];
+  //   const reader = new FileReader();
+
+  //   reader.onloadend = () => {
+  //     setUserImage(reader.result as string);
+  //   };
+  //   if (selectedImage) {
+  //     reader.readAsDataURL(selectedImage);
+  //   }
+  // };
   return (
-    <form>
-      <div>
-        <input
-          data-testid="edit-input-name"
-          name="nome"
-          type="text"
-        />
-      </div>
-      <div>
-        <input
-          data-testid="edit-input-email"
-          name="email"
-          type="text"
-        />
-      </div>
-      <div>
-        <textarea name="bio" id="" cols="30" rows="10" />
-      </div>
-      <div>
-        <input
-          data-testid="edit-input-image"
-          type="image"
-          src=""
-          alt=""
-        />
-      </div>
+    <>
+      {loading && (
+        <div>
+          <h1>Carregando...</h1>
+          <br />
+          <RotatingLines
+            strokeColor="grey"
+            strokeWidth="5"
+            animationDuration="1.75"
+            width="96"
+            visible
+          />
+        </div>
+      )}
+      {!loading && (
+        <form>
+          <div>
+            <input
+              data-testid="edit-input-name"
+              name="name"
+              type="text"
+              value={ loadProfile?.name }
+              onChange={ (event) => handleChange(event) }
+            />
+          </div>
+          <div>
+            <input
+              data-testid="edit-input-email"
+              name="email"
+              type="text"
+              value={ loadProfile?.email }
+              onChange={ (event) => handleChange(event) }
+            />
+          </div>
+          <div>
+            <textarea
+              name="description"
+              data-testid="edit-input-description"
+              value={ loadProfile?.description }
+              cols={ 30 }
+              rows={ 10 }
+              onChange={ (event) => handleChange(event) }
+            />
+          </div>
+          <div>
+            {/* <input
+              data-testid="edit-input-image"
+              type="file"
+              name="image"
+              accept="image/*"
+              onChange={ handleImage }
+            /> */}
+          </div>
 
-      <button data-testid="edit-button-save" disabled>Salvar</button>
+          <button data-testid="edit-button-save" disabled>Salvar</button>
 
-    </form>
+        </form>
+      )}
+    </>
   );
 }
 
