@@ -6,10 +6,26 @@ export const StyledLogin = styled.form`
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 400px;
-    height: 400px;
-    border: 1px solid blue;
+    width: 600px;
+    height: 550px;    
+    box-shadow: 2px 1px 10px 0 #4934bf;
     border-radius: 5px;
+
+  & .loginHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  margin-bottom: 20px;
+  width: 100%;
+  height: 100px;
+  background-color: #4934bf;
+  border-radius: 5px;
+  box-shadow: 10px 15px 5px 0 rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 55px;
+  font-family: 'Monoton', cursive;
+}
+
   & img {
     width: 200px;
     height: 200px;
@@ -21,7 +37,7 @@ export const StyledLogin = styled.form`
   }
   & input {
     border-radius: 3px;
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 10px;
     padding-left: 5px;
   }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { RotatingLines } from 'react-loader-spinner';
+import { useNavigate } from 'react-router-dom';
 import { getUser, updateUser } from '../services/userAPI';
 import { UserType, InputTextType } from '../types';
 
@@ -7,27 +8,27 @@ function ProfileEdit() {
   const [loadProfile, setLoadProfile] = useState<UserType>();
   const [disableBtn, setDisableBtn] = useState(true);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const userResult = async () => {
       const userData = await getUser();
       setLoadProfile(userData);
       setLoading(false);
-      console.log(userData);
     };
     userResult();
   }, []);
 
-  function handleChange({ target }: InputTextType) {
+  const handleChange = ({ target }: InputTextType) => {
     const { name, value } = target;
     setLoadProfile({
       ...loadProfile as UserType,
       [name]: value,
     });
     allInputFields();
-  }
+  };
 
-  function allInputFields() {
+  const allInputFields = () => {
     if (loadProfile) {
       const isProfileValid = loadProfile.description.length > 0
                               && loadProfile.email.length > 0
@@ -36,24 +37,30 @@ function ProfileEdit() {
       setDisableBtn(!isProfileValid);
       return disableBtn;
     }
-  }
+  };
+
+  const handleSubmit = async () => {
+    updateUser(loadProfile as UserType);
+    setLoading(false);
+    navigate('/profile');
+  };
   return (
-    <>
+    <section className="editArea">
       {loading && (
-        <div>
+        <div className="profileLoad">
           <h1>Carregando...</h1>
           <br />
           <RotatingLines
             strokeColor="grey"
             strokeWidth="5"
-            animationDuration="1.75"
+            animationDuration="1.0"
             width="96"
             visible
           />
         </div>
       )}
       {!loading && (
-        <form className="form">
+        <form className="form" onSubmit={ handleSubmit }>
           <div className="editNameContainer">
             <h3>Nome: </h3>
             <input
@@ -106,7 +113,7 @@ function ProfileEdit() {
 
         </form>
       )}
-    </>
+    </section>
   );
 }
 

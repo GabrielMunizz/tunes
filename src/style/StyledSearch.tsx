@@ -7,9 +7,8 @@ export const StyledSearch = styled.form`
   justify-content: space-between;  
   align-items: center;
   height: 200px;  
-  width: 600px;  
-  margin-top: 20px;
-
+  width: 600px;
+  
   & h2 {
     color: #fff;
     font-size: 40px;

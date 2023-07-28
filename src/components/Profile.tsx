@@ -21,13 +21,13 @@ function Profile() {
   return (
     <StyledMain>
       {loading && (
-        <div>
+        <div className="userProfile">
           <h1>Carregando...</h1>
           <br />
           <RotatingLines
             strokeColor="grey"
             strokeWidth="5"
-            animationDuration="1.75"
+            animationDuration="1.25"
             width="96"
             visible
           />

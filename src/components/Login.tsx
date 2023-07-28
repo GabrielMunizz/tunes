@@ -5,7 +5,7 @@ import { InputTextType } from '../types';
 import { createUser } from '../services/userAPI';
 import { StyledMain } from '../style/StyledMain.style';
 import { StyledLogin } from '../style/StyledLogin.style';
-import { StyledBlueButton } from '../style/StyledButtons.style';
+import { StyledButton } from '../style/StyledButtons.style';
 
 function Login() {
   // Cria states para guardar o username e condição de loading
@@ -27,10 +27,13 @@ function Login() {
   };
 
   return (
-    <StyledMain>
+    <section className="loginContainer">
       {!loading && (
         <StyledLogin onSubmit={ handleSubmit }>
-          <img src="src/images/headphone.png" alt="" />
+          <header className="loginHeader">
+            <p>TrybeTunes</p>
+          </header>
+          <img src="src/images/headphoneColor.png" alt="" />
           <h1>Login:</h1>
           <input
             value={ userName }
@@ -41,13 +44,13 @@ function Login() {
             placeholder="Digite seu nome"
           />
           <br />
-          <StyledBlueButton
+          <StyledButton
             data-testid="login-submit-button"
             disabled={ userName.length < 3 }
           >
             Entrar
 
-          </StyledBlueButton>
+          </StyledButton>
         </StyledLogin>
 
       )}
@@ -65,7 +68,7 @@ function Login() {
 
         </>
       )}
-    </StyledMain>
+    </section>
   );
 }
 

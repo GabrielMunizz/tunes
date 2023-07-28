@@ -7,7 +7,7 @@ export const StyledHeader = styled.header`
   width: 100%;
   height: 100px;
   margin: 20px 0px;
-  background-color: rgb(73, 52, 191);
+  background-color: #4934bf;
   border-radius: 5px;
   box-shadow: 10px 15px 5px 0 rgba(0, 0, 0, 0.2);
  

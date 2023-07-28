@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { RotatingLines } from 'react-loader-spinner';
 import { StyledMain } from '../style/StyledMain.style';
-import { StyledBlueButton } from '../style/StyledButtons.style';
+import { StyledButton } from '../style/StyledButtons.style';
 import { StyledSearch } from '../style/StyledSearch';
 import { InputTextType, AlbumType, FormSubmitType } from '../types';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
@@ -45,13 +45,13 @@ function Search() {
             type="text"
             onChange={ handleSearch }
           />
-          <StyledBlueButton
+          <StyledButton
             data-testid="search-artist-button"
             disabled={ search.length < 2 }
           >
             Search
 
-          </StyledBlueButton>
+          </StyledButton>
         </StyledSearch>
       )}
       {loading && (
