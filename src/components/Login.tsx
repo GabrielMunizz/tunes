@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { RotatingLines } from 'react-loader-spinner';
 import { InputTextType } from '../types';
 import { createUser } from '../services/userAPI';
-import { StyledMain } from '../style/StyledMain.style';
 import { StyledLogin } from '../style/StyledLogin.style';
 import { StyledButton } from '../style/StyledButtons.style';
 
