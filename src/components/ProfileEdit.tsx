@@ -4,16 +4,27 @@ import { useNavigate } from 'react-router-dom';
 import { getUser, updateUser } from '../services/userAPI';
 import { UserType, InputTextType } from '../types';
 
+const initialProfileValues = {
+  name: '',
+  email: '',
+  image: '',
+  description: '',
+};
+
 function ProfileEdit() {
-  const [loadProfile, setLoadProfile] = useState<UserType>();
-  const [disableBtn, setDisableBtn] = useState(true);
+  const [loadProfile, setLoadProfile] = useState<UserType>(initialProfileValues);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const isProfileValid = loadProfile.description.length > 0
+                              && loadProfile.email.length > 0
+                              && loadProfile.image.length > 0
+                              && loadProfile.name.length > 0;
 
   useEffect(() => {
     const userResult = async () => {
       const userData = await getUser();
       setLoadProfile(userData);
+
       setLoading(false);
     };
     userResult();
@@ -25,22 +36,11 @@ function ProfileEdit() {
       ...loadProfile as UserType,
       [name]: value,
     });
-    allInputFields();
-  };
-
-  const allInputFields = () => {
-    if (loadProfile) {
-      const isProfileValid = loadProfile.description.length > 0
-                              && loadProfile.email.length > 0
-                              && loadProfile.image.length > 0
-                              && loadProfile.name.length > 0;
-      setDisableBtn(!isProfileValid);
-      return disableBtn;
-    }
   };
 
   const handleSubmit = async () => {
-    updateUser(loadProfile as UserType);
+    setLoading(true);
+    await updateUser(loadProfile as UserType);
     setLoading(false);
     navigate('/profile');
   };
@@ -105,7 +105,7 @@ function ProfileEdit() {
 
           <button
             data-testid="edit-button-save"
-            disabled={ disableBtn }
+            disabled={ !isProfileValid }
           >
             Salvar
 
