@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { RotatingLines } from 'react-loader-spinner';
 import { SongType } from '../types';
 import getMusics from '../services/musicsAPI';
-import { StyledMain } from '../style/StyledMain.style';
+import { StyledMain } from '../style/StyledMain';
 import MusicCard from './MusicCard';
 
 function Album() {

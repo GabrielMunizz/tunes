@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { SongType } from '../types';
-import { StyledAudio } from '../style/StyledAudio.style';
-import { StyledAudioContainer } from '../style/StyledAudioContainer.style';
+import { StyledAudio } from '../style/StyledAudio';
+import { StyledAudioContainer } from '../style/StyledAudioContainer';
 import { addSong, removeSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 type MusicCardProps = {

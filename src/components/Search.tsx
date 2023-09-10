@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { RotatingLines } from 'react-loader-spinner';
-import { StyledMain } from '../style/StyledMain.style';
-import { StyledButton } from '../style/StyledButtons.style';
+import { StyledMain } from '../style/StyledMain';
+import { StyledButton } from '../style/StyledButtons';
 import { StyledSearch } from '../style/StyledSearch';
 import { InputTextType, AlbumType, FormSubmitType } from '../types';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import ArtistCollectionCard from './ArtistCollectionCard';
-import { StyledCardContainer } from '../style/StyledCardContainer.style';
+import { StyledCardContainer } from '../style/StyledCardContainer';
 
 function Search() {
   // Cria states para a busca, carregamento da pagina

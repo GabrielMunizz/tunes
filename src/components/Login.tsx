@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { RotatingLines } from 'react-loader-spinner';
 import { InputTextType } from '../types';
 import { createUser } from '../services/userAPI';
-import { StyledLogin } from '../style/StyledLogin.style';
-import { StyledButton } from '../style/StyledButtons.style';
+import { StyledLogin } from '../style/StyledLogin';
+import { StyledButton } from '../style/StyledButtons';
 
 function Login() {
   // Cria states para guardar o username e condição de loading
