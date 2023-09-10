@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { RotatingLines } from 'react-loader-spinner';
 import { getUser } from '../services/userAPI';
 import { UserType } from '../types';
-import { StyledHeader } from '../style/StyledHeader.style';
+import { StyledHeader } from '../style/StyledHeader';
 
 function Header() {
   const [user, setUser] = useState<UserType>();
