@@ -1,4 +1,3 @@
-
 #Descrição do Projeto:
 - Este é um projeto React que cria um site para busca de artistas, álbuns e músicas usando a API do iTunes como fonte de dados. Os usuários podem explorar o vasto catálogo da iTunes Store e executar prévias das músicas. Além disso, eles têm a capacidade de adicionar músicas às suas listas de favoritos, personalizar seu nome de usuário e fazer upload de uma imagem para ser usada como avatar.
 
