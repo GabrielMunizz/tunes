@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { UserType } from '../types';
+import * as S from '../style/StyledUserProfile';
 
 type UserProfileType = {
   loggedUser: UserType;
@@ -8,7 +9,7 @@ type UserProfileType = {
 function UserProfile({ loggedUser }: UserProfileType) {
   const { description, email, image, name } = loggedUser;
   return (
-    <section className="profileContainer">
+    <S.Section className="profileContainer">
       <div className="imageAndInfoContainer">
         <div className="imageContainer">
           <img
@@ -34,7 +35,7 @@ function UserProfile({ loggedUser }: UserProfileType) {
         <p className="profileBio">{description}</p>
       </div>
       <Link className="editProfileBtn" to="/profile/edit">Editar perfil</Link>
-    </section>
+    </S.Section>
   );
 }
 

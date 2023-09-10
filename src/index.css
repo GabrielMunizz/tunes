@@ -144,15 +144,18 @@ a:hover {
 }
 
 .editProfileBtn {
-  align-items: center;
-  border: 1px solid white;
+  text-align: center;
+  height: 38px;
+  width: 120px;
+  border: none;
   border-radius: 5px;
+  font-size: 20px;
   background-color: #8a2be2;
-  display: flex;
-  height: 60px;
-  justify-content: center;
-  margin: 10px;
-  width: 100px;
+  color: #fff;
+  padding: 5px; 
+  transition: ease 0.5s;
+  box-shadow: 1px 1px 8px #000;
+  margin-top: 10px;
 }
 
 .form {
@@ -163,12 +166,6 @@ a:hover {
   font-size: 18px;
   height: 80vh;  
   justify-content: center;
-}
-
-.form button {
-  font-size: 15px;
-  width: 100px;
-  height: 40px;
 }
 
 .editBioContainer, .editImageContainer, .editNameContainer, .editEmailContainer {

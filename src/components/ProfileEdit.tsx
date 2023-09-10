@@ -3,6 +3,7 @@ import { RotatingLines } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 import { getUser, updateUser } from '../services/userAPI';
 import { UserType, InputTextType } from '../types';
+import { StyledButton } from '../style/StyledButtons';
 
 const initialProfileValues = {
   name: '',
@@ -103,13 +104,13 @@ function ProfileEdit() {
             />
           </div>
 
-          <button
+          <StyledButton
             data-testid="edit-button-save"
             disabled={ !isProfileValid }
           >
             Salvar
 
-          </button>
+          </StyledButton>
 
         </form>
       )}
