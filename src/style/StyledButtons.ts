@@ -21,5 +21,17 @@ export const StyledButton = styled.button`
     background-color: #f80606;
     color: #888787;
     transform: scale(1.0);
-  }  
+  }
+
+  @media (max-width: 1405px) {
+    width: 70px;
+    height: 30px;
+    font-size: 17px;
+  }
+
+  @media (max-width: 760px) {
+    width: 55px;
+    height: 25px;
+    font-size: 15px;
+  }
 `;

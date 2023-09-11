@@ -36,7 +36,7 @@ function Search() {
       {!loading && (
         <StyledSearch onSubmit={ (event) => handleSubmit(event) }>
           <div>
-            <h2>O que quer ouvir?</h2>
+            <h2>What do you wanna listen?</h2>
           </div>
           <input
             value={ search }

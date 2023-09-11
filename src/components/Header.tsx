@@ -38,36 +38,39 @@ function Header() {
           <div className="titleContainer">
             <p>TrybeTunes</p>
           </div>
-          <div className="userNameContainer">
-            <h3>Welcome: </h3>
-            <h3 data-testid="header-user-name">
-              {user?.name}
-            </h3>
+          <div className="navContainer">
+            <div className="userNameContainer">
+              <h3>Welcome: </h3>
+              <h3 data-testid="header-user-name">
+                {user?.name}
+              </h3>
+            </div>
+            <div className="navlinkContainer">
+              <NavLink
+                className="searchLink"
+                data-testid="link-to-search"
+                to="/search"
+              >
+                Search
 
-            <NavLink
-              className="searchLink"
-              data-testid="link-to-search"
-              to="/search"
-            >
-              Search
+              </NavLink>
+              <NavLink
+                className="favLink"
+                data-testid="link-to-favorites"
+                to="/favorites"
+              >
+                Favorites
 
-            </NavLink>
-            <NavLink
-              className="favLink"
-              data-testid="link-to-favorites"
-              to="/favorites"
-            >
-              Favorites
+              </NavLink>
+              <NavLink
+                className="profileLink"
+                data-testid="link-to-profile"
+                to="/profile"
+              >
+                My profile
 
-            </NavLink>
-            <NavLink
-              className="profileLink"
-              data-testid="link-to-profile"
-              to="/profile"
-            >
-              My profile
-
-            </NavLink>
+              </NavLink>
+            </div>
           </div>
         </StyledHeader>
       )}
