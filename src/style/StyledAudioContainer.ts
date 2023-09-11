@@ -16,4 +16,20 @@ export const StyledAudioContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
+
+  @media(max-width: 865px) {
+    width: 420px;
+    font-size: 15px; 
+  }
+
+  @media(max-width: 445px) {
+    width: 100%;
+    font-size: 15px; 
+  }
+
+  @media(max-width: 325px) {
+    width: 100%;
+    font-size: 15px;
+    text-align: left; 
+  }
 `;
