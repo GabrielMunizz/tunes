@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { UserType } from '../types';
+import imageExemple from '../images/userImageEx.png';
 import * as S from '../style/StyledUserProfile';
 
 type UserProfileType = {
@@ -15,7 +16,7 @@ function UserProfile({ loggedUser }: UserProfileType) {
           <img
             data-testid="profile-image"
             className="profileImage"
-            src={ image }
+            src={ image === '' ? imageExemple : image }
             alt="imagem do usuario"
           />
         </div>
