@@ -4,6 +4,7 @@ import { InputTextType } from '../types';
 import { createUser } from '../services/userAPI';
 import { StyledLogin } from '../style/StyledLogin';
 import { StyledButton } from '../style/StyledButtons';
+import loginImage from '../images/headphoneColor.png';
 import Loading from './Loading';
 
 function Login() {
@@ -32,7 +33,7 @@ function Login() {
           <header className="loginHeader">
             <p>TrybeTunes</p>
           </header>
-          <img src="src/images/headphoneColor.png" alt="" />
+          <img src={ loginImage } alt="" />
           <h1>Login:</h1>
           <input
             value={ userName }
