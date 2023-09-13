@@ -21,7 +21,7 @@ function UserProfile({ loggedUser }: UserProfileType) {
         </div>
         <div className="userInfo">
           <div className="nameContainer">
-            <h3>Nome:</h3>
+            <h3>Name:</h3>
             <p className="profileName">{name}</p>
           </div>
           <div className="emailContainer">
@@ -31,10 +31,10 @@ function UserProfile({ loggedUser }: UserProfileType) {
         </div>
       </div>
       <div className="bioContainer">
-        <h3>Descrição:</h3>
+        <h3>About:</h3>
         <p className="profileBio">{description}</p>
       </div>
-      <Link className="editProfileBtn" to="/profile/edit">Editar perfil</Link>
+      <Link className="editProfileBtn" to="/profile/edit">Edit profile</Link>
     </S.Section>
   );
 }

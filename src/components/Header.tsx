@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { RotatingLines } from 'react-loader-spinner';
 import { getUser } from '../services/userAPI';
 import { UserType } from '../types';
 import { StyledHeader } from '../style/StyledHeader';
+import Loading from './Loading';
 
 function Header() {
   const [user, setUser] = useState<UserType>();
@@ -19,17 +19,7 @@ function Header() {
   return (
     <>
       {loading && (
-        <div className="loadingHeader">
-          <h1>Carregando...</h1>
-          <RotatingLines
-            strokeColor="grey"
-            strokeWidth="5"
-            animationDuration="1.75"
-            width="96"
-            visible
-          />
-
-        </div>
+        <Loading />
       )}
 
       {!loading && (user?.name.length !== 0) && (

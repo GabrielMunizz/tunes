@@ -13,7 +13,7 @@ export const StyledHeader = styled.header`
  
  & .titleContainer {
   flex-grow: 1;
-  transform: translate(10%);
+  transform: translate(16%);
 }
     
   & .titleContainer p {

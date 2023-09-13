@@ -16,5 +16,6 @@ export const GlobalStyle = createGlobalStyle`
       background: linear-gradient(to bottom, #0c1825, #001e32, #012345, #023456);
       background-size:cover;
       background-attachment: fixed;
+      font-family: 'Architects Daughter', cursive;
     }
 `;

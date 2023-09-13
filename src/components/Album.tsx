@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { RotatingLines } from 'react-loader-spinner';
 import { SongType } from '../types';
 import getMusics from '../services/musicsAPI';
 import { StyledMain } from '../style/StyledMain';
 import MusicCard from './MusicCard';
+import Loading from './Loading';
 
 function Album() {
   const [savedMusics, setSavedMusics] = useState<SongType[]>([]);
@@ -24,16 +24,7 @@ function Album() {
   return (
     <StyledMain>
       {loading && (
-        <div className="loadingContainer">
-          <h1>Carregando...</h1>
-          <RotatingLines
-            strokeColor="grey"
-            strokeWidth="5"
-            animationDuration="1.75"
-            width="96"
-            visible
-          />
-        </div>
+        <Loading />
       )}
       {!loading && (
         <div className="musicContainer">

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { RotatingLines } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 import { getUser, updateUser } from '../services/userAPI';
 import { UserType, InputTextType } from '../types';
 import { StyledButton } from '../style/StyledButtons';
+import Loading from './Loading';
 
 const initialProfileValues = {
   name: '',
@@ -48,22 +48,12 @@ function ProfileEdit() {
   return (
     <section className="editArea">
       {loading && (
-        <div className="profileLoad">
-          <h1>Carregando...</h1>
-          <br />
-          <RotatingLines
-            strokeColor="grey"
-            strokeWidth="5"
-            animationDuration="1.0"
-            width="96"
-            visible
-          />
-        </div>
+        <Loading />
       )}
       {!loading && (
         <form className="form" onSubmit={ handleSubmit }>
           <div className="editNameContainer">
-            <h3>Nome: </h3>
+            <h3>Name: </h3>
             <input
               data-testid="edit-input-name"
               name="name"
@@ -83,7 +73,7 @@ function ProfileEdit() {
             />
           </div>
           <div className="editImageContainer">
-            <h3>URL da imagem: </h3>
+            <h3>Image URL: </h3>
             <input
               type="text"
               name="image"
@@ -93,7 +83,7 @@ function ProfileEdit() {
             />
           </div>
           <div className="editBioContainer">
-            <h3>Descrição: </h3>
+            <h3>Tell about yourself: </h3>
             <textarea
               name="description"
               data-testid="edit-input-description"
@@ -108,7 +98,7 @@ function ProfileEdit() {
             data-testid="edit-button-save"
             disabled={ !isProfileValid }
           >
-            Salvar
+            Save
 
           </StyledButton>
 

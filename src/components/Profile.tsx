@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { RotatingLines } from 'react-loader-spinner';
 import { getUser } from '../services/userAPI';
 import { UserType } from '../types';
 import { StyledMain } from '../style/StyledMain';
 import UserProfile from './UserProfile';
+import Loading from './Loading';
 
 function Profile() {
   const [loading, setLoading] = useState(true);
@@ -21,17 +21,7 @@ function Profile() {
   return (
     <StyledMain>
       {loading && (
-        <div className="userProfile">
-          <h1>Carregando...</h1>
-          <br />
-          <RotatingLines
-            strokeColor="grey"
-            strokeWidth="5"
-            animationDuration="1.25"
-            width="96"
-            visible
-          />
-        </div>
+        <Loading />
       )}
       {!loading && (
         <UserProfile loggedUser={ loggedUser as UserType } />

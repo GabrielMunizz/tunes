@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { RotatingLines } from 'react-loader-spinner';
 import { StyledMain } from '../style/StyledMain';
 import { StyledButton } from '../style/StyledButtons';
 import { StyledSearch } from '../style/StyledSearch';
@@ -7,6 +6,7 @@ import { InputTextType, AlbumType, FormSubmitType } from '../types';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import ArtistCollectionCard from './ArtistCollectionCard';
 import { StyledCardContainer } from '../style/StyledCardContainer';
+import Loading from './Loading';
 
 function Search() {
   // Cria states para a busca, carregamento da pagina
@@ -55,24 +55,14 @@ function Search() {
         </StyledSearch>
       )}
       {loading && (
-        <>
-          <h1>Carregando...</h1>
-          <br />
-          <RotatingLines
-            strokeColor="grey"
-            strokeWidth="5"
-            animationDuration="1.75"
-            width="96"
-            visible
-          />
-        </>
+        <Loading />
       )}
       {searchData.length > 0 && (
         <>
           <h1 className="searchResult">
-            Resultado de álbuns de:
+            Search result:
             {' '}
-            {backupSearch}
+            {backupSearch.toUpperCase()}
           </h1>
           <StyledCardContainer>
             {searchData.map((result) => (

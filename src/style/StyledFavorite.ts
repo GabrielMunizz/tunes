@@ -1,7 +1,8 @@
 import { styled } from 'styled-components';
 
-export const StyledAudioContainer = styled.div`
-  display: flex;  
+export const StyledFavorites = styled.div`
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 800px;

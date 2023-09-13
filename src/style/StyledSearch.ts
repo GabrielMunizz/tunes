@@ -4,13 +4,14 @@ export const StyledSearch = styled.form`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
   align-items: center;
   height: 200px;
   width: 600px;
 
   & h2 {
-    color: #fff;
+    color: #fff;    
     font-size: 40px;
     font-family: 'Architects Daughter', cursive;
   }
@@ -19,6 +20,7 @@ export const StyledSearch = styled.form`
     width: 500px;
     height: 35px;
     border-radius: 3px;
+    margin-right: 10px;
   }
 
   @media (max-width: 1405px) {
@@ -38,7 +40,7 @@ export const StyledSearch = styled.form`
   @media (max-width: 610px) {
     width: 100%;
     flex-direction: column;
-    justify-content: center;    
+    justify-content: center;
 
     & h2 {
       font-size: 23px;

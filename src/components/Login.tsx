@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { RotatingLines } from 'react-loader-spinner';
 import { InputTextType } from '../types';
 import { createUser } from '../services/userAPI';
 import { StyledLogin } from '../style/StyledLogin';
 import { StyledButton } from '../style/StyledButtons';
+import Loading from './Loading';
 
 function Login() {
   // Cria states para guardar o username e condição de loading
@@ -40,32 +40,21 @@ function Login() {
             type="text"
             data-testid="login-name-input"
             onChange={ handleChange }
-            placeholder="Digite seu nome"
+            placeholder="Type your name"
           />
           <br />
           <StyledButton
             data-testid="login-submit-button"
             disabled={ userName.length < 3 }
           >
-            Entrar
+            Login
 
           </StyledButton>
         </StyledLogin>
 
       )}
       {loading && (
-        <>
-          <h1>Carregando...</h1>
-          <br />
-          <RotatingLines
-            strokeColor="grey"
-            strokeWidth="5"
-            animationDuration="0.75"
-            width="96"
-            visible
-          />
-
-        </>
+        <Loading />
       )}
     </section>
   );
