@@ -3,6 +3,8 @@ import { SongType } from '../types';
 import { StyledAudio } from '../style/StyledAudio';
 import { StyledAudioContainer } from '../style/StyledAudioContainer';
 import { addSong, removeSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import checkedHeart from '../images/checked_heart.png';
+import emptyHeart from '../images/empty_heart.png';
 
 type MusicCardProps = {
   music: SongType
@@ -52,8 +54,8 @@ function MusicCard({ music, removeFav = undefined }: MusicCardProps) {
             onChange={ (event) => handleChecked(event) }
           />
           <img
-            src={ isChecked ? '/src/images/checked_heart.png'
-              : '/src/images/empty_heart.png' }
+            src={ isChecked ? checkedHeart
+              : emptyHeart }
             alt="favorite"
           />
         </label>
